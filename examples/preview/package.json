@@ -1,0 +1,26 @@
+{
+  "name": "preview-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite | cat",
+    "build": "vite build | cat",
+    "preview": "vite preview --port 5173 | cat"
+  },
+  "dependencies": {
+    "glasswindui": "workspace:*",
+    "@heroicons/react": "^2.2.0",
+    "@tanstack/react-router": "^1.49.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^4.1.13",
+    "vite": "^5.4.10"
+  }
+}

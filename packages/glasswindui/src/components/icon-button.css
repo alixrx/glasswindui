@@ -1,0 +1,11 @@
+@utility gw-btn-icon {
+    @apply gw-btn h-12 w-12 p-0 rounded-full flex items-center justify-center;
+}
+
+@utility gw-btn-icon-sm {
+    @apply h-10 w-10;
+}
+
+@utility gw-btn-icon-lg {
+    @apply h-14 w-14;
+}

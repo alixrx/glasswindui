@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "name": "glasswindui",
+  "version": "0.0.1-alpha.0",
+  "author": "Ali Samei",
+  "license": "MIT",
+  "files": [
+    "src",
+    "index.js",
+    "plugin.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./index.js",
+  "module": "./index.js",
+  "packageManager": "pnpm@10.17.1",
+  "style": "./dist/index.css",
+  "publishConfig": { "access": "public" }
+}

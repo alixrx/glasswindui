@@ -1,0 +1,17 @@
+/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+:root {
+  --gw-radius: 10px;
+  --gw-pad-x: 1rem;
+  --gw-pad-y: 0.75rem;
+  --gw-gap: 0.5rem;
+  --gw-bg: oklch(0.95 0.01 250);
+  --gw-fg: oklch(0.28 0.03 250);
+  --gw-elev: oklch(1 0 0 / 0.4);
+  --gw-focus: oklch(0.65 0.2 250);
+}
+[data-theme="dark"] {
+  --gw-bg: oklch(0.17 0.03 250);
+  --gw-fg: oklch(0.92 0.02 250);
+  --gw-elev: oklch(0 0 0 / 0.4);
+  --gw-focus: oklch(0.75 0.2 250);
+}

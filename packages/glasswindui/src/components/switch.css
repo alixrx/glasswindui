@@ -1,0 +1,42 @@
+@utility gw-switch {
+    @apply gw-glass;
+    @apply appearance-none inline-block align-middle cursor-pointer select-none;
+    width: 48px;
+    height: 28px;
+    border-radius: 9999px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.12);
+    transition: background-color .3s cubic-bezier(0.4, 0, 0.2, 1), border-color .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Thumb */
+.gw-switch::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: rgba(180, 180, 180, 0.15);
+    border: 1px solid color-mix(in oklab, rgb(200, 200, 200) 35%, transparent);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), background-color .3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+/* Checked state */
+.gw-switch:checked {
+    border: 1px solid color-mix(in oklab, rgb(200, 200, 200) 35%, transparent);
+    background: rgba(255, 255, 255, 0.60);
+}
+
+.gw-switch:checked::after {
+    transform: translateX(20px) scale(1.05);
+    background: rgba(255, 255, 255, 0.75);
+    border-color: color-mix(in oklab, rgb(255, 255, 255) 50%, transparent);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    left: 2px;
+}

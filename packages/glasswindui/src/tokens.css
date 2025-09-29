@@ -1,0 +1,30 @@
+:root {
+  --gw-pad-x: 1rem;
+  --gw-pad-y: 0.75rem;
+  --gw-gap: 0.5rem;
+  --gw-bg: oklch(0.95 0.01 250);
+  --gw-fg: oklch(14.5% 0 0);
+  --gw-elev: oklch(1 0 0 / 0.4);
+  --gw-focus: oklch(0.65 0.2 250);
+  /* Glass accents */
+  --gw-border: oklch(0.82 0.02 250 / 0.6);
+  --gw-inner: oklch(1 0 0 / 0.45);
+  --gw-outer: oklch(0 0 0 / 0.08);
+  --gw-specular: oklch(1 0 0 / 0.18);
+  --gw-spot-a: rgba(255,255,255,0.18);
+  --gw-spot-b: rgba(255,255,255,0.10);
+  --gw-blur: 3px;
+}
+
+[data-theme="dark"] {
+  --gw-bg: oklch(0.17 0.03 250);
+  --gw-fg: oklch(92.2% 0 0);
+  --gw-elev: oklch(0 0 0 / 0.4);
+  --gw-focus: oklch(0.75 0.2 250);
+  --gw-border: oklch(0.32 0.02 250 / 0.55);
+  --gw-inner: oklch(1 0 0 / 0.08);
+  --gw-outer: oklch(0 0 0 / 0.45);
+  --gw-specular: oklch(1 0 0 / 0.10);
+  --gw-spot-a: rgba(255,255,255,0.10);
+  --gw-spot-b: rgba(255,255,255,0.06);
+}

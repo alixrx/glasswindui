@@ -1,0 +1,39 @@
+@utility gw-checkbox {
+  @apply appearance-none inline-block align-middle cursor-pointer select-none
+         w-5 h-5 rounded-[6px] transition duration-200 ease-out
+         gw-glass-base gw-glass-shadow;
+
+  --gw-shine: radial-gradient(120% 100% at 0% 0%, rgba(255,255,255,.10), transparent 60%);
+  background-image: var(--gw-shine);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  --gw-check-lightmode: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23262626' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 10.5l3 3 7-7'/%3E%3C/svg%3E");
+  --gw-check-darkmode:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23D4D4D4' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 10.5l3 3 7-7'/%3E%3C/svg%3E");
+  --gw-check: var(--gw-check-lightmode);
+
+  &:hover         { @apply gw-glass-hover; }
+  &:focus-visible { @apply gw-glass-focus; }
+  &:active        { @apply gw-glass-active; }
+
+  &:checked {
+    background-image: var(--gw-check), var(--gw-shine);
+    background-size: 88% 88%, 100% 100%;
+    background-position: center, 0 0;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  &:indeterminate {
+    background-image: linear-gradient(#262626,#262626), var(--gw-shine); /* neutral-800 by default */
+    background-size: 14px 2px, 100% 100%;
+    background-position: center, 0 0;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  &:disabled { @apply opacity-50 cursor-not-allowed; }
+}
+
+.dark .gw-checkbox { --gw-check: var(--gw-check-darkmode); }
+.dark .gw-checkbox:indeterminate {
+  background-image: linear-gradient(#D4D4D4,#D4D4D4), var(--gw-shine); /* neutral-300 */
+}

@@ -1,0 +1,8 @@
+@utility gw-btn-disabled {
+  @apply opacity-50 pointer-events-none select-none;
+}
+
+.gw-btn:disabled,
+.gw-btn[aria-disabled="true"] {
+  @apply gw-btn-disabled;
+}

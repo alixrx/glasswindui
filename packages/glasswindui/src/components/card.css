@@ -1,0 +1,16 @@
+@utility gw-card {
+  @apply gw-glass-base flex flex-col;
+  &::before { @apply gw-shine-before; }
+  &::after  { @apply gw-shine-after; }
+  border-radius: var(--gw-radius-card, var(--gw-radius, 16px));
+  padding-block: var(--gw-pad-y);
+  padding-inline: var(--gw-pad-x);
+  gap: var(--gw-gap);
+  /* Subtle elevated ring */
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.25),
+    0 12px 36px var(--gw-outer);
+  /* Nice border */
+  border: 1px solid color-mix(in oklab, var(--gw-outer) 22%, transparent);
+}

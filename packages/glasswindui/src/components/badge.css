@@ -1,0 +1,10 @@
+@utility gw-badge {
+  @apply gw-glass-base gw-glass-shadow gw-fg inline-flex items-center gap-1 px-3 py-1 rounded-2xl text-sm select-none;
+  &::before { @apply gw-shine-before; }
+  &::after  { @apply gw-shine-after; }
+}
+
+@utility gw-badge-sm { @apply text-xs px-2.5 py-0.5 rounded-xl; }
+@utility gw-badge-lg { @apply text-base px-3.5 rounded-3xl; }
+
+

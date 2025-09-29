@@ -1,0 +1,70 @@
+@utility gw-accordion {
+  @apply gw-glass-base gw-glass-shadow rounded-xl overflow-hidden text-left select-none;
+  @apply cursor-pointer block transition-all duration-200 ease-out;
+}
+
+.gw-accordion { position: relative; }
+.gw-accordion > input[type="checkbox"] {
+  @apply absolute top-2 left-2 w-[1px] h-[1px] opacity-0 pointer-events-none;
+}
+
+@utility gw-accordion-title {
+  @apply relative w-full flex items-center justify-between gap-3 px-4 py-3 cursor-pointer font-bold;
+}
+
+.gw-accordion .gw-accordion-title::after {
+  content: "";
+  @apply ml-2 inline-block w-5 h-4 opacity-80 transition-transform duration-300 ease-out;
+  transform-origin: center;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 18 24 34 36 18"/></svg>') no-repeat center / contain;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="black" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><polyline points="12 18 24 34 36 18"/></svg>') no-repeat center / contain;
+  background-color: currentColor;
+  will-change: transform;
+}
+
+.gw-accordion:has(> input[type="checkbox"]:checked) .gw-accordion-title::after,
+.gw-accordion.gw-accordion-open .gw-accordion-title::after {
+  @apply rotate-180;
+}
+
+.gw-accordion.gw-accordion-open .gw-accordion-title::after {
+  @apply hidden;
+}
+
+@utility gw-accordion-content {
+  @apply px-4 text-sm overflow-hidden;
+  display: grid;
+  grid-template-areas: "body";
+  grid-template-rows: 0fr;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-block-size: 0;
+  block-size: 0;
+  transition: grid-template-rows .28s ease, padding .28s ease, opacity .24s ease-out;
+}
+
+.gw-accordion-content > * { grid-area: body; overflow: hidden; min-block-size: 0; }
+.gw-accordion-content > :first-child { margin-top: 0; }
+.gw-accordion-content > :last-child { margin-bottom: 0; }
+
+.gw-accordion:has(> input[type="checkbox"]:checked) .gw-accordion-content,
+.gw-accordion.gw-accordion-open .gw-accordion-content {
+  grid-template-rows: 1fr;
+  @apply opacity-100;
+  padding-top: .5rem;
+  padding-bottom: .75rem;
+  block-size: auto;
+}
+
+.gw-accordion.gw-accordion-close .gw-accordion-content {
+  grid-template-rows: 0fr;
+  @apply opacity-0;
+  padding-top: 0;
+  padding-bottom: 0;
+  block-size: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gw-accordion * { transition: none !important; }
+}

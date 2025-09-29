@@ -1,0 +1,85 @@
+@utility gw-glass-base {
+    @apply transition-all duration-300;
+    @apply relative isolate overflow-hidden bg-transparent;
+    border: 1px solid color-mix(in oklab, rgb(200,200,200) 16%, transparent);
+    @apply backdrop-blur-[var(--gw-blur)];
+    -webkit-backdrop-filter: blur(var(--gw-blur));
+    transition: box-shadow .22s ease, transform .12s ease, background-color .22s ease, border-color .22s ease, backdrop-filter .22s ease, -webkit-backdrop-filter .22s ease;
+}
+
+@utility gw-glass-shadow {
+    box-shadow:
+        0px 1px 4px 0px rgba(0,0,0, 0.80),
+        0px 1px 4px rgba(0,0,0, 0.10),
+        inset 3px 2px 1px -2px rgba(255, 255, 255, 0.6),
+        inset -3px -2px 1px -2px rgba(255, 255, 255, 0.6);
+    will-change: transform, box-shadow, backdrop-filter; 
+}
+
+@utility gw-glass-hover {
+  @apply transition-all duration-200;
+  @apply backdrop-blur-[calc(var(--gw-blur)_+_2px)] scale-[1.01];
+  -webkit-backdrop-filter: blur(calc(var(--gw-blur) + 2px));
+  background: color-mix(in oklab, rgb(255 255 255) 8%, transparent);
+  border-color: color-mix(in oklab, rgb(200 200 200) 28%, transparent);
+}
+
+@utility gw-glass-focus {
+    @apply transition-all duration-200;
+    @apply outline-none;
+    box-shadow:
+      0 0 0 2px color-mix(in oklab, var(--gw-outer) 62%, transparent),
+      0 10px 28px color-mix(in oklab, var(--gw-outer) 22%, transparent);
+}
+
+@utility gw-glass-active {
+  @apply transition-all duration-300;
+  @apply scale-[.99];
+  filter: brightness(.98);
+}
+
+@utility gw-shine-before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none z-[-2]
+           bg-[linear-gradient(135deg,_rgba(255,255,255,.10)_0%,_transparent_40%,_rgba(255,255,255,.12)_60%,_transparent_100%)]
+           bg-[length:200%_200%]
+           blur-[18px] mix-blend-screen;
+    border-radius: inherit;
+    animation: swirl 9s linear infinite paused; /* run on hover/focus */
+}
+
+@utility gw-shine-after {
+    content: "";
+    @apply absolute inset-0 pointer-events-none z-[-1]
+           backdrop-blur-[18px] backdrop-saturate-[1.35];
+    border-radius: inherit;
+    background: rgba(255,255,255,.08);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
+}
+
+@utility gw-fg {
+    @apply text-[var(--gw-fg)];
+}
+
+@utility gw-glass {
+    @apply gw-glass-base gw-glass-shadow gw-fg;
+    &::before       { @apply gw-shine-before; }
+    &::after        { @apply gw-shine-after; }
+    &:hover         { @apply gw-glass-hover; }
+    &:focus-visible { @apply gw-glass-focus; }
+    &:active        { @apply gw-glass-active; }
+    &:hover::before,
+    &:focus-visible::before { animation-play-state: running; }
+}
+
+/* keyframes for the subtle shimmer */
+@keyframes swirl {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+  
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .gw-shine-before { animation: none !important; }
+}
