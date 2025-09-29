@@ -25,25 +25,8 @@ That’s it. Now you can use provided utilities/classes.
 
 ## Quick examples
 
-```html
-<button class="gw-btn">Liquid Glass</button>
-<div class="gw-card">...</div>
-<span class="gw-badge">New</span>
-<div class="gw-accordion">
-  <input id="a1" type="checkbox" />
-  <label for="a1" class="gw-accordion-title">Details</label>
-  <div class="gw-accordion-content">Content...</div>
- </div>
-```
+You can check out component examples at [https://glasswindui.com/](https://glasswindui.com/)
 
-## Components
-- Button: `gw-btn`, sizes `gw-btn-sm|gw-btn|gw-btn-lg`, `gw-btn-disabled`
-- Badge: `gw-badge`, sizes `gw-badge-sm|gw-badge|gw-badge-lg`
-- Card: `gw-card` (non-interactive glass surface)
-- Accordion: `gw-accordion`, parts `gw-accordion-title|gw-accordion-content`, modifiers `gw-accordion-open|gw-accordion-close`
-
-## Tokens
-Composable tokens power the look: `gw-glass-base`, `gw-glass-shadow`, `gw-shine-before`, `gw-shine-after`, `gw-glass-hover`, `gw-glass-focus`, `gw-glass-active`.
 
 ## License
 

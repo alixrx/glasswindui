@@ -1,6 +1,7 @@
 import React from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 import { Link } from '@tanstack/react-router';
+import logoUrl from '@/assets/glasswindlogo.png';
 
 export default function Header(): JSX.Element {
 	return (
@@ -8,13 +9,13 @@ export default function Header(): JSX.Element {
 			<div className="max-w-7xl mx-auto px-6 py-4">
 				<nav className="flex items-center justify-between">
 					<Link to="/" className="flex items-center gap-3 cursor-pointer">
-						<img src="/src/assets/glasswindlogo.png" alt="Glasswind UI" className="w-8 h-8" />
+						<img src={logoUrl} alt="Glasswind UI" className="w-8 h-8" />
 						<span className="text-xl font-semibold bg-clip-text">Glasswind UI</span>
 					</Link>
 					<div className="flex items-center gap-2">
 						<ThemeToggle />
 						<a 
-							href="https://github.com/alisamei/glasswindui" 
+							href="https://github.com/alixrx/glasswindui" 
 							target="_blank" 
 							rel="noreferrer" 
 							aria-label="GitHub" 
