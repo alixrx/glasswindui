@@ -9,6 +9,6 @@
   "scripts": {
     "dev": "pnpm --filter preview-demo dev",
     "build": "pnpm -r build",
-    "publish": "pnpm -C packages/glasswindui publish --access public"
+    "publish": "npm publish packages/glasswindui --access public"
   }
 }
