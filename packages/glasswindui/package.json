@@ -6,6 +6,7 @@
   "license": "MIT",
   "files": [
     "src",
+    "dist",
     "index.js",
     "plugin.css",
     "README.md",
