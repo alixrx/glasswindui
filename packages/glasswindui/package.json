@@ -1,9 +1,17 @@
 {
   "type": "module",
   "name": "glasswindui",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.2",
   "author": "Ali Samei",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alixrx/glasswindui.git"
+  },
+  "homepage": "https://glasswindui.com/",
+  "bugs": {
+    "url": "https://github.com/alixrx/glasswindui/issues"
+  },
   "files": [
     "src",
     "dist",
@@ -15,6 +23,8 @@
   "main": "./index.js",
   "module": "./index.js",
   "packageManager": "pnpm@10.17.1",
-  "style": "./dist/index.css",
-  "publishConfig": { "access": "public" }
+  "style": "./src/index.css",
+  "publishConfig": {
+    "access": "public"
+  }
 }

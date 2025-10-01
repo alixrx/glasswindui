@@ -14,14 +14,14 @@ yarn add -D glasswindui
 
 ## Usage (Tailwind v4)
 
-Import Tailwind and the Glasswind stylesheet in your app’s entry CSS:
+Import Tailwind and the Glasswind plugin in your app's entry CSS:
 
 ```css
 @import "tailwindcss";
-@import "glasswindui/dist/index.css";
+@plugin "glasswindui";
 ```
 
-That’s it. Now you can use provided utilities/classes.
+That's it. Now you can use provided utilities/classes.
 
 ## Quick examples
 
