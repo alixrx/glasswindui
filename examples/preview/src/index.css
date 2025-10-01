@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@import "glasswindui/src/index.css";
+@import "glasswindui";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 html { 

@@ -10,6 +10,5 @@
     "dev": "pnpm --filter preview-demo dev",
     "build": "pnpm -r build",
     "publish": "npm publish packages/glasswindui --access public"
-  },
-  "version": "0.0.1"
+  }
 }
